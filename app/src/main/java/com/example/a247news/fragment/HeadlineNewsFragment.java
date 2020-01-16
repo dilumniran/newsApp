@@ -17,7 +17,6 @@ import com.example.a247news.adapter.HeadlinesAdapter;
 import com.example.a247news.interfaces.AdapterOnItemClickListener;
 import com.example.a247news.interfaces.AdapterOnItemClickListenerEvent;
 import com.example.a247news.object.Article;
-import com.example.a247news.ui.main.PageViewModel;
 import com.example.a247news.util.Constant;
 
 import java.util.ArrayList;
@@ -31,8 +30,6 @@ public class HeadlineNewsFragment extends BaseFragment implements AdapterOnItemC
     private ArrayList<Article> mArticles;
 
     private static final String ARG_SECTION_NUMBER = "section_number";
-
-    private PageViewModel pageViewModel;
 
     public static HeadlineNewsFragment newInstance(int index) {
         HeadlineNewsFragment fragment = new HeadlineNewsFragment();
@@ -74,10 +71,15 @@ public class HeadlineNewsFragment extends BaseFragment implements AdapterOnItemC
 
     @Override
     public void onItemClick(AdapterOnItemClickListenerEvent event) {
-        Article article = (Article) event.getObject();
-        Intent intent = new Intent(getActivity(), NewsDetailsActivity.class);
-        intent.putExtra(Constant.IMAGE_URL,article.getUrl());
-        startActivity(intent);
+        if(isNetworkConnected()){
+            Article article = (Article) event.getObject();
+            Intent intent = new Intent(getActivity(), NewsDetailsActivity.class);
+            intent.putExtra(Constant.IMAGE_URL,article.getUrl());
+            startActivity(intent);
+        }else {
+            showSnackBar(getString(R.string.no_internet));
+        }
+
     }
 
     public void setDataToFragment(Object data) {

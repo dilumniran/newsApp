@@ -22,7 +22,6 @@ import com.example.a247news.interfaces.AdapterOnItemClickListener;
 import com.example.a247news.interfaces.AdapterOnItemClickListenerEvent;
 import com.example.a247news.object.Article;
 import com.example.a247news.object.Source;
-import com.example.a247news.ui.main.PageViewModel;
 import com.example.a247news.util.Constant;
 
 import java.util.ArrayList;
@@ -122,10 +121,14 @@ public class NewsFilterFragment extends BaseFragment implements AdapterOnItemCli
 
     @Override
     public void onItemClick(AdapterOnItemClickListenerEvent event) {
-        Article article = (Article) event.getObject();
-        Intent intent = new Intent(getActivity(), NewsDetailsActivity.class);
-        intent.putExtra(Constant.IMAGE_URL,article.getUrl());
-        startActivity(intent);
+        if(isNetworkConnected()) {
+            Article article = (Article) event.getObject();
+            Intent intent = new Intent(getActivity(), NewsDetailsActivity.class);
+            intent.putExtra(Constant.IMAGE_URL, article.getUrl());
+            startActivity(intent);
+        }else {
+            showSnackBar(getString(R.string.no_internet));
+        }
     }
 
     public void setSourcesToFragment(Object data) {

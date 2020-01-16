@@ -16,12 +16,9 @@ import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 
 import com.example.a247news.R;
-import com.example.a247news.adapter.HeadlinesAdapter;
 import com.example.a247news.interfaces.AdapterOnItemClickListener;
 import com.example.a247news.interfaces.AdapterOnItemClickListenerEvent;
-import com.example.a247news.object.Article;
 import com.example.a247news.object.User;
-import com.example.a247news.ui.main.PageViewModel;
 import com.example.a247news.util.SessionManager;
 
 import java.util.ArrayList;
