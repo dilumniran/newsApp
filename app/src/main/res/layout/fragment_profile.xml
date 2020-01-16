@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragment.ProfileFragment">
+
+
+
+    <ScrollView
+        android:id="@+id/userViewSV"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp">
+
+                <ImageView
+                    android:id="@+id/logoutIv"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/ic_logout_icon" />
+
+            </RelativeLayout>
+
+            <TextView
+                style="@style/TextViewLabelMediumBlack"
+                android:layout_marginTop="10dp"
+                android:text="@string/first_name" />
+
+            <EditText
+                android:id="@+id/firstNameET"
+                style="@style/TextViewLabelMediumBlack"
+                android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ "
+                android:layout_height="@dimen/text_height"
+                android:gravity="center_vertical" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="1sp"
+                android:layout_marginTop="5dp"
+                android:background="@color/ash" />
+
+            <TextView
+                style="@style/TextViewLabelMediumBlack"
+                android:layout_marginTop="10dp"
+                android:text="@string/last_name" />
+
+            <EditText
+                android:id="@+id/lastNameET"
+                style="@style/TextViewLabelMediumBlack"
+                android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ "
+                android:layout_height="@dimen/text_height"
+                android:gravity="center_vertical" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="1sp"
+                android:layout_marginTop="5dp"
+                android:background="@color/ash" />
+
+            <TextView
+                style="@style/TextViewLabelMediumBlack"
+                android:layout_marginTop="10dp"
+                android:text="@string/phone_number" />
+
+            <EditText
+                android:id="@+id/phoneNoET"
+                android:inputType="number"
+                android:maxLength="10"
+                style="@style/TextViewLabelMediumBlack"
+                android:layout_height="@dimen/text_height"
+                android:gravity="center_vertical"
+                android:hint="71123456" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="1sp"
+                android:layout_marginTop="5dp"
+                android:background="@color/ash" />
+
+            <Button
+                android:id="@+id/saveBTN"
+                style="@style/SaveButton"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="15dp"
+                android:text="@string/save" />
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <RelativeLayout
+        android:id="@+id/registerRl"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/registerBTN"
+            style="@style/SaveButton"
+            android:layout_centerInParent="true"
+            android:text="@string/register" />
+
+    </RelativeLayout>
+
+
+</RelativeLayout>
