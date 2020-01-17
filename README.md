@@ -1,5 +1,34 @@
+# 247News Documentation #
+
+## What is this repository for? ##
+
+* 247News Android application.
+* IDE: Android Studio 3.5.1
+* App Name: 247News
+* Package Name: com.example.a247news
+
 # newsApp
-it's app that shows news using third party library.
-In first Tab (Headlines) it's shows the top headlines and use can view specific news by clicking the one of the head line.
-In second Tab (preferences) it's shows news by filtering that user preferred keyword and user can filter the news by selecting drop down.
-In thired Tab (profile) it's shows the user info. for new user it's shows register button for go to register view and for registed users it's shows the user profile view.
+This is a android app that shows news using third party library.The main functions of the 247News are,
+
+    1 Shows the top headlines
+    2 Link to open original news 
+    3 Custom news based on user preferences
+    4 Profile
+    
+## How do I get set up? ##
+
+### Summary of set up ###
+
+* Android Studio v3.5.1
+* Gradle 'com.android.tools.build:gradle:3.5.1'
+* minSdkVersion 23
+* targetSdkVersion 28
+* versionCode 1
+* versionName "1.0"
+    
+### Configuration ###
+
+Clone sims project
+
+``https://github.com/dilumniran/newsApp.git``
+
